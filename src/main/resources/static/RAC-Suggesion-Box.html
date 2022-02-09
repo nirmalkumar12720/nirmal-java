@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAAAAC Suggestion Box</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="CSS/theme.css">
+   <script src="js/jquery.min.js" ></script>
+</head>
+
+<body>
+    <div class="parent-container">
+        <form>
+            <!-- -->
+            <div class="space">
+                <div class="Suggession-box">
+                    <label class="">
+                        <span class="box">PAAC Suggestion Box</span>
+                    </label>
+                </div>
+            </div>
+
+
+            <!-- -->
+            <div class="space">
+                <div class="child">
+                    <label class="label"><span class="header"> Have an idea for how PAAAC can generate more revence,
+                            reduce
+                            costs,be more productive or improve customer satisfaction? Submit it below!</span>
+                    </label>
+
+                </div>
+                </div>
+
+
+                <!-- -->
+
+                <div class="space">
+                    <div class="child-container">
+                        <label class="label" id="FirstName" >First Name<span
+                                class="star">*</span></label>
+                        
+                            <input type="text" class="text"  placeholder="Enter First Name" id="firstName" onblur="onBlurFirstName()"/>                                           
+                    </div>
+                   
+
+
+
+                    <div class="child-container">
+                        <label class="label" id="LastName">Last Name<span class="star">*</span></label>
+                        <input type="text" class="text"  placeholder="Enter Last Name"  id="lastName"  onblur="onBlurLastName()" />
+                    </div>
+                </div>
+
+
+                <!-- -->
+                <span id="onBlurFirstName" style="float: left; margin-left: 50px;"></span>
+
+                <div class="space">
+                    <div class="child-container">
+                        <label class="label" id="JobTitle">Job Title<span class="star">*</span></label>
+                        <input type="email" class="text"  placeholder="Enter Job Title" id="jobTitle" onblur="onBlurJobTitle()"/>
+                    </div>
+
+                   <span id="onBlurLastName" style="float: left; margin-left: 50px;"></span>
+
+                    <div class="child-container">
+                        <label class="label">PAAAAC Email</label>
+                        <input type="email" class="text"  placeholder="Enter PAAAC Email" id="racEmail" onblur="onBlurRACEmail()" />
+                    </div>
+                </div>
+
+                <!-- -->
+                <span id="onBlurJobTitle" style="float: left; margin-left: 50px;"></span>
+                <div class="space">                   
+                    <div class="child-container">
+                        <label class="label">Category<span class="star">*</span></label>
+                        <select class="dropdown" id="category" onblur="onBlurCategory()" onchange="topicAreaDropdown()" >
+                            <option value="0">Select Category</option>
+                        </select>
+                          
+                    </div>
+                  <span id="onBlurRACEmail" style="float: left; margin-left: 50px;"></span>
+
+                    <div class="child-container">
+                        <label class="label">Topic Area<span class="star">*</span></label>
+                        <select class="dropdown" class="select" id="topicArea"  onblur="onBlurTopicArea()" onchange="topicDropdown()">
+                            <option value="0">Select TopicArea</option>
+
+                        </select>
+                    </div>
+                    <span id="onBlurTopicArea" style="float: right; margin-right: 500px;"></span>
+                </div>
+
+                <!-- -->
+                <span id="onBlurCategory" style="float: left; margin-left: 50px;"></span>
+                <div class="space">
+                    <div class="child-container">
+                        <label class="label">Topic<span class="star">*</span></label>
+                        <select class="dropdown" id="topic" onblur="onBlurTopic()" onchange="functionTopic()">
+                            <option value="0">Select Topic</option>
+                    
+                        </select>
+                    </div>
+                </div>
+
+                <!-- -->
+                <span id="onBlurTopic" style="float: left; margin-left: 50px;"></span>
+                <div class="space">
+                    <div class="child-container">
+                        <label class="label">Suggestion<span class="star">*</span></label>
+                        <textarea name="" id="suggestion" onblur="onBlurSuggestion()"  cols="130" rows="10"
+                            style="background-color: lightblue; border-color: blue;  margin: 0px; width: 979px; height: 149px; resize: none;" ></textarea>
+
+                    </div>
+                   
+                </div>
+                <span id="onBlurSuggestion" style="float: left; margin-left: 50px;"></span>
+
+                <div class="space">
+                    <div class="parent-button">
+                     <input type="button" class="submit-button-1" 
+                                 onclick="saveSuggestionDetails()" style="margin-bottom: 20px; cursor: pointer;" onclick="submit()" value="Submit" id="start_button"  />
+                    </div>
+
+                    <div class="parent-button">
+                        <button type="button" class="submit-button-2" id="btnadd"
+                            style="margin-bottom: 20px; cursor: pointer;">Go To Admin Portal</button>
+                    </div>
+                </div>
+
+        </form>
+    </div>
+    <script src="js/RAC-Suggestion.js"></script>
+    <script src="js/JsExceptionHandler.js"></script>
+</body>
+
+</html>

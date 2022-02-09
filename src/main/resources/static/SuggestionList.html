@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAAC Suggestion Box</title>
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" href="CSS/theme.css">
+  <script src="js/jquery.min.js" ></script>
+
+
+</head>
+
+<body>
+	<div class="parent-container">
+
+		<!-- -->
+		<div class="space">
+			<div class="Suggession-box">
+				<label class=""> <span class="box">PAAC Suggestion Box</span>
+				</label>
+			</div>
+		</div>
+
+		<!-- -->
+
+		<div class="space">
+			<div class="topnav">
+				<a href=""><button type="button" class="submit-button-11"
+						id="btnadd" onclick="">Suggestions</button></a> <a href=""><button
+						type="button" class="submit-button-12" id="btnadd" onclick="">
+						<b>Summary</b>
+					</button></a> <a href=""><button type="button" class="submit-button-12"
+						id="btnadd" onclick="">
+						<b>Users</b>
+					</button></a> <a href=""><button type="button" class="submit-button-12"
+						id="btnadd" onclick="">
+						<b>Area</b>
+					</button></a> <a href=""><button type="button" class="submit-button-12"
+						id="btnadd" onclick="">
+						<b>Topics</b>
+					</button></a> <a href=""><button type="button" class="submit-button-12"
+						id="btnadd" onclick="">
+						<b>Categories</b>
+					</button></a> <a href=""><button type="button" class="submit-button-12"
+						id="btnadd" onclick="">
+						<b>Configuration</b>
+					</button></a>
+
+			</div>
+		</div>
+
+		<!-- -->
+				<div class="space wid">
+		 
+     
+   <div > <input type="text" placeholder="Search.." name="search2" class="searchBar" id="searchBar"></div>
+   <div style=float:right;margin-top:35px;margin-right:15px">
+			<span id="filterId"><img class="filter"
+				src="images/Vector.svg" alt="filter-icon" title="Advanced Filter" /></span>
+
+			<div id="filterModal" class="modal">
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<h2>Filter</h2>
+<div>
+<label class="label1">Category</label> <select class="dropdown"
+						class="select" id="category" onblur="onBlurCategory()" onchange="topicAreaDropdown()">
+						<option value="0">Select Category</option>
+					</select>
+					<span id="onBlurCategory" style="position: absolute; top: 271px;
+    right: 328px;"></span>
+					                 
+					
+
+
+					<label class="label2">Topic Area</label> <select class="dropdown"
+						class="select" id="topicArea" onblur="onBlurTopicArea()" onchange="topicDropdown()">
+						<option value="0">Select TopicArea</option>
+					</select>
+			       <span id="onBlurTopicArea" style="position: absolute;     top: 367px;
+    right: 320px;"></span>
+
+
+					<label class="label3">Topic</label> <select class="dropdown"
+						id="topic" onblur="onBlurTopic()">
+						<option value="0">Select Topic</option>
+					</select>
+					                    <span id="onBlurTopic" style="position: absolute; top: 461px;
+    right: 351px;"></span>
+   </div>
+					<div>				
+                    
+						<span onclick="document.getElementById('filterModal').style.display='none'"><button type="button" class="submit-button-1" id="btnadd"
+							style="margin-bottom: 20px; cursor: pointer; margin-top: 28px;"onclick="applyFilterButton()"> Apply</button></span>
+
+						<a href="">
+							<button type="button" class="submit-button-1" id="btnadd"
+								style="margin-bottom: 20px; cursor: pointer; margin-top: 10px;">Cancel</button>
+						</a>
+					</div>
+
+</div>
+
+				</div>
+			</div>
+			<div style="float:right">
+			<button type="button" class="export Excel" onclick="exportToExcel()" style="margin-top:30px"> 	
+      ExportTo Excel</button></div>
+
+
+		</div>
+
+		<!-- -->
+		<div class="space">
+			<table class="grid">
+				<thead class="">
+					<tr class="alternate-row">
+						<th class="table-header">ID <span class="sorting"><a
+								class="sort-up" ><img class="sort-image"
+									src="images/sortup-icon.svg" alt="sort-up"
+									onclick="sortingInOrder()" /> </a> </span>
+						</th>
+						<th class="table-header">Submitted By</th>
+						<th class="table-header">TopicArea</th>
+						<th class="table-header">Topic</th>
+						<th class="table-header">Status</th>
+						<th class="table-header">Submitted Date</th>
+
+					</tr>
+				</thead>
+				<tbody id="suggestiontable" >
+
+<!-- 					<tr style=" padding: 10px; -->
+<!--     text-align: center;"> -->
+<!-- 						<td class="table-definition " id="suggestionId"><a href="" -->
+<!-- 							style="text-decoration: none;"></a></td> -->
+<!-- 						<td class="table-definition" id="submittedBy"></td> -->
+<!-- 						<td class="table-definition" id="topicArea"></td> -->
+<!-- 						<td class="table-definition" id="topic"></td> -->
+<!-- 						<td class="table-definition" id="status"></td> -->
+<!-- 						<td class="table-definition" id="submittedDate"></td> -->
+
+<!-- 					</tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+					<!--                     <tr> -->
+					<!--                         <td class="table-definition "><a href="" style="text-decoration: none;">1</a></td> -->
+					<!--                         <td class="table-definition">kishore</td> -->
+					<!--                         <td class="table-definition">AcceptanceNow</td> -->
+					<!--                         <td class="table-definition">VAN</td> -->
+					<!--                         <td class="table-definition">Open</td> -->
+					<!--                         <td class="table-definition">24/09/2021 9:05PM</td> -->
+
+					<!--                     </tr> -->
+
+				</tbody>
+
+			</table>
+
+		</div>
+
+
+
+		<!--  -->
+
+		<div class="space"
+			style="margin-top: 600px; margin-bottom: 25px; position: fixed;"><span> Showing Of </span>
+			<span id= "numberOfRecords" class="bold-txt"></span>  / <span id="totalRecords"class="bold-txt"> </span>
+			<span style="float: right; margin-right: 160px;">
+				<button onclick="leftNavigationButton()" id="leftButton"
+					style="color: darkblue; border-radius: 160px; width: 35px; height: 35px; border-color: darkblue; margin-left: 15px;" disabled>
+					<b>
+						<h2 style="color: darkblue; cursor: pointer;"><</h2>
+					</b>
+				</button> <b id="frontNumber"></b> <b>/</b> <b id="backNumber"></b>
+				<button onclick="rightNavigationButton()" id="rightButton"
+					style="color: darkblue; border-radius: 50%; width: 35px; height: 35px; border-color: darkblue;">
+					<b>
+						<h2 style="color: darkblue; cursor: pointer;">></h2>
+					</b>
+				</button>
+			</span>
+
+		</div>
+
+
+
+	</div>
+	
+	<script>
+		// Get the modal
+		var modalFilter = document.getElementById("filterModal");
+
+		// Get the button that opens the modal
+		var filterIcon = document.getElementById("filterId");
+
+		// Get the <span> element that closes the modal
+		var filterSpan = document.getElementsByClassName("close")[0];
+
+		// When the user clicks the button, open the modal 
+		filterIcon.onclick = function() {
+			modalFilter.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		filterSpan.onclick = function() {
+			modalFilter.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modalFilter) {
+				modalFilter.style.display = "none";
+			}
+
+		}
+	</script>
+	<script src="js/SuggestionList.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+</body>
+
+</html>
