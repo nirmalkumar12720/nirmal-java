@@ -1,4 +1,4 @@
-package com.racsuggestionbox.bl;
+package com.paac.bl;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -8,9 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-import com.racsuggestionbox.entity.FilterBO;
-import com.racsuggestionbox.entity.SuggestionBO;
-import com.racsuggestionbox.dl.SuggestionBoxDL;
+import com.paac.dl.SuggestionBoxDL;
+import com.paac.entity.FilterBO;
+import com.paac.entity.SuggestionBO;
+
 
 @Component
 @Configuration

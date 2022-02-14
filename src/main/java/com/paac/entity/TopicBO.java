@@ -1,4 +1,4 @@
-package com.racsuggestionbox.entity;
+package com.paac.entity;
 
 import java.time.LocalDateTime;
 

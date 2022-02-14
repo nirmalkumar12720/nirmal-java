@@ -1,4 +1,4 @@
-package com.racsuggestionbox.excel;
+package com.paac.excel;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -15,7 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.racsuggestionbox.entity.SuggestionBO;
+import com.paac.entity.SuggestionBO;
 
 public class SuggestionExcelExporter {
 	    private XSSFWorkbook workbook;

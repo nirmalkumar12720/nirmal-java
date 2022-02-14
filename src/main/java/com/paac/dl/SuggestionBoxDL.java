@@ -1,4 +1,4 @@
-package com.racsuggestionbox.dl;
+package com.paac.dl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,15 +20,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
-import com.racsuggestionbox.entity.CategoryBO;
-import com.racsuggestionbox.entity.FilterBO;
-import com.racsuggestionbox.entity.SuggestionBO;
-import com.racsuggestionbox.entity.TopicAreaBO;
-import com.racsuggestionbox.entity.TopicBO;
-import com.racsuggestionbox.repository.CategoryRepository;
-import com.racsuggestionbox.repository.SuggestionRepository;
-import com.racsuggestionbox.repository.TopicAreaRepository;
-import com.racsuggestionbox.repository.TopicRepository;
+
+import com.paac.entity.CategoryBO;
+import com.paac.entity.FilterBO;
+import com.paac.entity.SuggestionBO;
+import com.paac.entity.TopicAreaBO;
+import com.paac.entity.TopicBO;
+import com.paacrepository.CategoryRepository;
+import com.paacrepository.SuggestionRepository;
+import com.paacrepository.TopicAreaRepository;
+import com.paacrepository.TopicRepository;
 
 @Component
 @Configuration

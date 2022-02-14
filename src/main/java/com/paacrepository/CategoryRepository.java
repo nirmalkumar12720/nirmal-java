@@ -1,4 +1,4 @@
-package com.racsuggestionbox.repository;
+package com.paacrepository;
 
 
 import java.util.List;
@@ -6,8 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-
-import com.racsuggestionbox.entity.CategoryBO;
+import com.paac.entity.CategoryBO;
 
 
 /**

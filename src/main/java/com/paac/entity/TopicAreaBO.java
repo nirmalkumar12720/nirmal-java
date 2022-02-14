@@ -1,4 +1,4 @@
-package com.racsuggestionbox.entity;
+package com.paac.entity;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,34 +18,36 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
-import lombok.Data;
 
 
 
-@Data
 @Entity
 @Builder
-@Table(name ="category")
-public class CategoryBO {
+@Table(name = "topicArea")
+public class TopicAreaBO {
 	
-	public int getCategoryId() {
-		return categoryId;
+	public int getTopicAreaId() {
+		return topicAreaId;
 	}
 
 
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
+
+	public void setTopicAreaId(int topicAreaId) {
+		this.topicAreaId = topicAreaId;
 	}
 
 
-	public String getCategoryName() {
-		return categoryName;
+
+	public String getTopicAreaName() {
+		return topicAreaName;
 	}
 
 
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
+
+	public void setTopicAreaName(String topicAreaName) {
+		this.topicAreaName = topicAreaName;
 	}
+
 
 
 	public LocalDateTime getCreatedDate() {
@@ -51,9 +55,11 @@ public class CategoryBO {
 	}
 
 
+
 	public void setCreatedDate(LocalDateTime createdDate) {
 		this.createdDate = createdDate;
 	}
+
 
 
 	public String getCreatedBy() {
@@ -61,9 +67,11 @@ public class CategoryBO {
 	}
 
 
+
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+
 
 
 	public String getModifiedBy() {
@@ -71,9 +79,11 @@ public class CategoryBO {
 	}
 
 
+
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
+
 
 
 	public LocalDateTime getModifiedDate() {
@@ -81,9 +91,11 @@ public class CategoryBO {
 	}
 
 
+
 	public void setModifiedDate(LocalDateTime modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
+
 
 
 	public int getIsDeleted() {
@@ -91,35 +103,41 @@ public class CategoryBO {
 	}
 
 
+
 	public void setIsDeleted(int isDeleted) {
 		this.isDeleted = isDeleted;
 	}
 
 
-	public List<SuggestionBO> getSuggestion() {
-		return suggestion;
+
+	public CategoryBO getCategory() {
+		return category;
 	}
 
 
-	public void setSuggestion(List<SuggestionBO> suggestion) {
-		this.suggestion = suggestion;
+
+	public void setCategory(CategoryBO category) {
+		this.category = category;
 	}
 
 
-	public List<TopicAreaBO> getTopicArea() {
-		return topicArea;
+
+	public List<TopicBO> getTopic() {
+		return topic;
 	}
 
 
-	public void setTopicArea(List<TopicAreaBO> topicArea) {
-		this.topicArea = topicArea;
+
+	public void setTopic(List<TopicBO> topic) {
+		this.topic = topic;
 	}
+
 
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	int categoryId;
-	String categoryName;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int topicAreaId;	
+	String topicAreaName;
 	LocalDateTime createdDate;
 	String createdBy;
 	String modifiedBy;
@@ -127,33 +145,38 @@ public class CategoryBO {
 	int isDeleted;
 	
 	
-	@OneToMany(mappedBy = "suggestion",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JsonIgnore
-	private  List<SuggestionBO> suggestion;
+
 	
-	@OneToMany(mappedBy = "category",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER,optional = false )
+	@JoinColumn(name="categoryId",nullable = false)	
 	@JsonIgnore
-	private  List<TopicAreaBO> topicArea;
+	private  CategoryBO category;
+	
+	@OneToMany(mappedBy = "topicArea",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JsonIgnore
+	private  List<TopicBO> topic;
 
 
-	public CategoryBO() {
+
+	public TopicAreaBO() {
 		super();
 	}
 
 
-	public CategoryBO(int categoryId, String categoryName, LocalDateTime createdDate, String createdBy,
-			String modifiedBy, LocalDateTime modifiedDate, int isDeleted, List<SuggestionBO> suggestion,
-			List<TopicAreaBO> topicArea) {
+
+	public TopicAreaBO(int topicAreaId, String topicAreaName, LocalDateTime createdDate, String createdBy,
+			String modifiedBy, LocalDateTime modifiedDate, int isDeleted, CategoryBO category, List<TopicBO> topic) {
 		super();
-		this.categoryId = categoryId;
-		this.categoryName = categoryName;
+		this.topicAreaId = topicAreaId;
+		this.topicAreaName = topicAreaName;
 		this.createdDate = createdDate;
 		this.createdBy = createdBy;
 		this.modifiedBy = modifiedBy;
 		this.modifiedDate = modifiedDate;
 		this.isDeleted = isDeleted;
-		this.suggestion = suggestion;
-		this.topicArea = topicArea;
+		this.category = category;
+		this.topic = topic;
 	}
 	
+
 }
